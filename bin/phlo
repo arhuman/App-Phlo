@@ -1,0 +1,63 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use App::Phlo;
+use Getopt::Long;
+
+my $REVERT;
+my $DIR;
+my $VERBOSE = 0;
+
+GetOptions(
+	"revert" => \$REVERT,
+	"verbose" => \$VERBOSE,
+	"dir=s"   => \$DIR,
+) or usage();
+
+usage() unless $DIR;
+
+my $phlo = new App::Phlo;
+
+if ($REVERT) {$phlo->action('unhardlink')}
+
+$phlo->optimize({ dir => $DIR });
+
+######################################################################
+#
+# Functions
+
+sub usage
+{
+	print <<EOT;
+
+usage:
+
+    phlo [options]
+
+options:
+
+    --dir=dirvalue      Directory to process (required)
+
+    --dryrun            Only simulate no action taken
+                        Use with --verbose to see what will be done
+
+    --filter=pattern    Set the filter for the filename to be processed
+
+    --revert            Changes hardlink back to copied file
+
+    --verbose           Gives more information about what's going on
+
+
+example:
+
+    plho --dir /path/to/the/dir/to/process --verbose
+
+    plho --dir /path/to/the/dir/to/process --filter *.pm3
+
+EOT
+
+		exit 0;
+}
+

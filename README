@@ -1,16 +1,16 @@
-App/Plho
-========
+App/Plho version 0.01
+=======================
 
-Phlo stands for 'Perl Hard Link Optimizer'.
-This utility was made beccause one day, I was lacking space on one
-of my VM.
-I look at the directories using a lot of space, and my perlbrew
-was one of them, that made think about all the duplicates files
-that were there (Same modules in all Perl versions, same licenses/generated
-files everywhere...).
+Phlo stands for 'Perl hard link optimizer'.
+This utility was made beccause one day, as I was lacking space on one
+of my VM, I look at the directories using a lot of space, and my perlbrew
+was one of them. 
+That made think about all the duplicates files that were there 
+(Same modules in all Perl versions, same licenses/generated files everywhere...)
+
 As I had already made a short script to find and delete all the duplicates in
 my multimedia files collection (ebooks, mp3, movies...) I decided to try to
-hard link the duplicates.
+hard link the duplicates instead.
 
 I test it on my perl5/perlbrew directory:
 
@@ -27,8 +27,8 @@ the differents Perl installed...
 
 I tought at first that it would be a good patch for perlbrew if it worked.
 But thinking about it, there is probably a need for a general tool of its own:
-Everytime read-only data are duplicated on a same filesystem (hard link) phlo
-can be used...
+Everytime read-only data are duplicated on a same filesystem (hard link) this
+technique can be used...
 
 So here is my attempt to provide such a tool.
 
@@ -55,7 +55,7 @@ Licence
 Copyright (c) 2012 Arnaud "Arhuman" Assad
 App::Phlo is released under the same terms as Perl.
 
-s program is free software; you can redistribute it and/or modify it
+This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published
 by the Free Software Foundation; or the Artistic License.
 
